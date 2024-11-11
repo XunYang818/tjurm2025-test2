@@ -13,5 +13,10 @@ float compute_area_ratio(const std::vector<cv::Point>& contour) {
      * 通过条件:
      * 运行测试点，通过即可。
      */
-    return 0.f;
+    cv::Mat contourMat(contour);
+    double area = cv::contourArea(contourMat);
+    cv::Rect boundingRect = cv::boundingRect(contourMat);
+    double rectArea = boundingRect.area();
+
+    return static_cast<float>(area / rectArea);
 }
