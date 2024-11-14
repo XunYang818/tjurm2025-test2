@@ -31,5 +31,5 @@ std::pair<cv::Rect, cv::RotatedRect> get_rect_by_contours(const cv::Mat& input) 
         }
     }
 
-    return res;
+    return res;//感觉题意有点不清晰，所以我的答案找的是最大面积轮廓的外接矩形和最小面积外接矩形
 }
